@@ -1,0 +1,22 @@
+html{
+  font-size: 10px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root, .app{
+  height: 100%;
+}
+
+*, *:after, *:before{
+  box-sizing: border-box;
+}
+
+P{
+  margin: 0;
+}

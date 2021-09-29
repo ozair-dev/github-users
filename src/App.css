@@ -1,0 +1,222 @@
+*{
+  transition: background-color 0.4s;
+}
+.app{
+  --primary-color:  #795548;
+  --secondary-color: #fff1bf;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.app.night{
+  --primary-color: #000033;
+  --secondary-color: #330033;
+}
+
+.navbar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+}
+
+.navbar > p{
+  color: white;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.navbar .toggle-day-night{
+  position: relative;
+  width: 5rem;
+  height: 2.6rem;
+  border-radius: 2rem;
+  background-color: #32174d;
+}
+
+.navbar .toggle-day-night > div{
+  position: absolute;
+  height: 2.6rem;
+  width: 2.6rem; 
+  background-color: yellow;
+  border-radius: 2rem;
+  left: 0rem;
+  transition: all 0.5s;
+}
+
+.app.night .navbar .toggle-day-night > div{
+  left: calc(5rem - 2.6rem - 1rem);
+  background-color: transparent;
+  box-shadow: 1rem 0 1px white;
+}
+
+
+@keyframes loading-animation{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.search-div{
+  margin: 2rem;
+  width:  50%;
+  background-color: white;
+  display: flex;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.search-div > input {
+  flex: 1;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.8rem;
+}
+
+.search-div > input:focus{
+  outline: none;
+}
+
+.search-div .cancel-search-button{
+  color: gray;
+  background-color: white;
+  border: none;
+  width: 4rem;
+  font-size: 2.3rem;
+}
+
+.search-div .cancel-search-button svg{
+  vertical-align: middle;
+}
+
+.search-div .search-icon.hidden{
+  display: none;
+}
+
+.search-div .loading-icon{
+  animation-name: loading-animation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite; 
+}
+.search-div .loading-icon.hidden{
+  display: none;
+}
+
+.search-div .search-button{
+  color: white;
+  border: none;
+  background-color: var(--primary-color);
+  width: 4rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.search-div .search-button svg{
+  vertical-align: middle;
+}
+
+@keyframes fading-animation{
+  from{
+    background-color: ghostwhite;
+  }
+  50%{
+    background-color: gainsboro;
+  }
+  to{
+    background-color: ghostwhite;
+  }
+}
+
+.skeleton{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skeleton.hidden{
+  display: none;
+}
+
+.skeleton .skeleton-image{
+  width: 10rem;
+  height: 10rem;
+  border-radius: 1rem;
+}
+
+.skeleton .skeleton-info{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skeleton .skeleton-info div{
+  margin-top: 1rem;
+  width: 50%;
+  height: 2rem;
+  border-radius: 1rem;
+}
+
+.skeleton .skeleton-image, .skeleton .skeleton-info div{
+  animation-name: fading-animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+
+.info-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-div a{
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.info-div img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.info-div p{
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.app.night .info-div p{
+  color: white;
+}
+
+.repos{
+  margin-top: 2rem;
+  width: 50%;
+}
+
+.repos > p{
+  font-size: 3rem;
+  font-weight: 600;
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #0000007d;
+}
+.repos > ul{
+  font-size: 1.8rem;
+  list-style-type: none;
+}
+
+.app.night .repos > ul a{
+  color: yellow;
+}
